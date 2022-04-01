@@ -1,6 +1,6 @@
 const createUserObj = ({
   uid,
-  name,
+  displayName,
   email,
   photoURL,
   accessToken,
@@ -9,9 +9,9 @@ const createUserObj = ({
 }) => {
   return {
     id: uid,
-    name: name,
-    email: email,
-    photoURL: photoURL,
+    name: displayName,
+    email,
+    photoURL,
     token: {
       accessToken: accessToken,
       refreshToken: refreshToken,

@@ -1,6 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { signInWithPopup } from "firebase/auth";
+
+//firebase
 import { auth, provider } from "../firebase";
+import { signInWithPopup } from "firebase/auth";
+
+//custom helper
 import createUserObj from "../helpers/createUserObj";
 
 export const signIn = createAsyncThunk(
@@ -9,6 +13,7 @@ export const signIn = createAsyncThunk(
     try {
       const res = await signInWithPopup(auth, provider);
       const user = res.user;
+      console.log(user);
       return createUserObj(user);
     } catch (err) {
       console.log(err);
@@ -17,8 +22,16 @@ export const signIn = createAsyncThunk(
   }
 );
 
+export const signOut = createAsyncThunk("auth/signOut", async () => {
+  try {
+    await auth.signOut();
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 const initialState = {
-  user: {},
+  user: null,
   loading: false,
   error: null,
 };
@@ -39,6 +52,11 @@ const authSlice = createSlice({
       state.loading = false;
       state.user = null;
       state.error = action.payload;
+    },
+    [signOut.fulfilled]: (state) => {
+      state.user = null;
+      state.loading = false;
+      state.error = null;
     },
   },
 });
