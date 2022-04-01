@@ -12,7 +12,7 @@ const getFromLocalStorage = (str) => {
     const data = JSON.parse(localStorage.getItem(str));
     return data;
   } catch (err) {
-    console.log("Your data cant be fethced");
+    console.log("Your data cant be fetched");
     return null;
   }
 };
