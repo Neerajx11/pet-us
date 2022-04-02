@@ -1,10 +1,14 @@
+import { async } from "@firebase/util";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import {
   addDoc,
   collection,
   doc,
+  getDocs,
+  query,
   serverTimestamp,
   setDoc,
+  where,
 } from "firebase/firestore";
 import { auth, db, provider } from "../firebase";
 
@@ -35,7 +39,7 @@ export const userSignOut = async () => {
 
 export const saveUserToDB = async ({ uid, name, email, photoURL }) => {
   try {
-    await setDoc(doc(db, "user", uid), {
+    await setDoc(doc(db, "users", uid), {
       uid,
       name,
       email,
@@ -56,4 +60,22 @@ export const addDoggoDetail = async () => {
   } catch (err) {
     console.log(err);
   }
+};
+
+export const getAllUser = async () => {
+  const list = [];
+  const querySnapshot = await getDocs(collection(db, "users"));
+  querySnapshot.forEach((doc) => list.push({ ...doc.data(), uid: doc.id }));
+  return list;
+};
+
+export const getYourDoggo = async (uid = null) => {
+  const list = [];
+
+  const querySnapshot = await getDocs(
+    query(collection(db, "doggo"), where("owner", "==", uid))
+  );
+  querySnapshot.forEach((doc) => list.push({ ...doc.data(), uid: doc.id }));
+
+  return list;
 };
