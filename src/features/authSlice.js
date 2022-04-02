@@ -1,33 +1,17 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-//firebase
-import { auth, provider } from "../firebase";
-import { signInWithPopup } from "firebase/auth";
-
-//custom helper
-import createUserObj from "../helpers/createUserObj";
+import { userSignIn, userSignOut } from "../helpers/firebaseManger";
 
 export const signIn = createAsyncThunk(
   "auth/signIn",
   async (state, { rejectWithValue }) => {
-    try {
-      const res = await signInWithPopup(auth, provider);
-      const user = res.user;
-      console.log(user);
-      return createUserObj(user);
-    } catch (err) {
-      console.log(err);
-      return rejectWithValue(err.message);
-    }
+    let res = await userSignIn();
+    return res.err ? rejectWithValue(res.data) : res.data;
   }
 );
 
 export const signOut = createAsyncThunk("auth/signOut", async () => {
-  try {
-    await auth.signOut();
-  } catch (err) {
-    console.log(err);
-  }
+  await userSignOut();
 });
 
 const initialState = {
