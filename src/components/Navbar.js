@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { signIn, signOut } from "../features/authSlice";
+import { signIn } from "../features/authSlice";
 
 import s from "./Navbar.module.css";
 
 import logo from "../assests/logo.svg";
-import { Book, Compass, LogIn, LogOut } from "react-feather";
+import { Book, Compass, LogIn, User } from "react-feather";
+import Profile from "./Profile";
 
 const Navbar = () => {
   const user = useSelector((state) => state.auth.user);
   const dispatch = useDispatch();
+
+  const [isVisible, setIsVisible] = useState(false);
+
   return (
     <nav className={s.nav}>
       <NavLink to="/">
@@ -30,14 +34,18 @@ const Navbar = () => {
         </div>
         <div className={s.navGroup}>
           {user ? (
-            <>
-              <span onClick={() => dispatch(signOut())}>sign out</span>
-              <LogIn strokeWidth={2} size={18} />
-            </>
+            <div
+              className={s.pro}
+              onClick={() => setIsVisible((prev) => !prev)}
+            >
+              <span>profile</span>
+              <User strokeWidth={2} size={18} />
+              {isVisible && <Profile className={s.trans} />}
+            </div>
           ) : (
             <>
               <span onClick={() => dispatch(signIn())}>sign in</span>
-              <LogOut strokeWidth={2} size={18} />
+              <LogIn strokeWidth={2} size={18} />
             </>
           )}
         </div>

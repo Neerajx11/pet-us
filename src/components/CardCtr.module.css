@@ -1,0 +1,9 @@
+.ctr {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+.dummy {
+  width: 250px;
+  margin: 0 25px;
+}

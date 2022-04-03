@@ -4,6 +4,7 @@ import {
   collection,
   deleteDoc,
   doc,
+  getDoc,
   getDocs,
   query,
   serverTimestamp,
@@ -65,10 +66,6 @@ export const getData = async (str, uid = null) => {
 
   //query according to requirement
   switch (str) {
-    case "myData":
-      // return current user details
-      querySnapshot = await getDocs(collection(db, `users/${uid}`));
-      break;
     case "users":
       // return all the users
       querySnapshot = await getDocs(collection(db, "users"));
@@ -77,11 +74,9 @@ export const getData = async (str, uid = null) => {
       // return all the dogs
       querySnapshot = await getDocs(collection(db, "doggo"));
       break;
-    case "myDoggo":
-      // return your dogs
-      querySnapshot = await getDocs(
-        query(collection(db, "doggo"), where("owner", "==", uid))
-      );
+    case "doggoDetail":
+      // return detail of a specific dog
+      querySnapshot = await getDocs(collection(db, `doggo/${uid}`));
       break;
     default:
       return list;
@@ -89,6 +84,13 @@ export const getData = async (str, uid = null) => {
 
   querySnapshot.forEach((doc) => list.push({ ...doc.data(), uid: doc.id }));
   return list;
+};
+
+export const getSingleDocument = async (str, uid) => {
+  const docRef = doc(db, str, uid);
+  const docSnap = await getDoc(docRef);
+  if (docSnap.exists()) return docSnap.data();
+  else return [];
 };
 
 //============== DOGGO CUD =====================

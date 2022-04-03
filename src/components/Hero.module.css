@@ -65,16 +65,16 @@
   top: 44%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 400px;
+  width: max-content;
 }
 .center p {
   font-size: 42px;
   font-weight: 600;
+  font-family: "Inter", sans-serif;
   text-align: center;
-  font-family: "Indie Flower", cursive;
 }
 .center p span {
-  font-family: "Indie Flower", cursive;
+  font-family: "Inter", sans-serif;
   text-decoration: underline;
 }
 .centDown {
