@@ -1,9 +1,9 @@
 .main {
   height: max-content;
-  margin: 35px auto;
+  margin: 45px auto 0;
   position: relative;
   padding: 20px 0;
-  border-radius: 40px 40px 0 0;
+  border-radius: 40px;
 }
 .main img {
   transition: transform 0.3s;
@@ -35,7 +35,10 @@
 .third {
   display: flex;
   justify-content: space-evenly;
-  margin: 50px;
+  margin: 70px 0;
+}
+.first {
+  margin-top: 40px;
 }
 .second {
   justify-content: space-between;
@@ -65,10 +68,13 @@
   width: 400px;
 }
 .center p {
-  font-size: 40px;
+  font-size: 42px;
   font-weight: 600;
+  text-align: center;
+  font-family: "Indie Flower", cursive;
 }
 .center p span {
+  font-family: "Indie Flower", cursive;
   text-decoration: underline;
 }
 .centDown {
@@ -77,30 +83,9 @@
   display: flex;
   justify-content: center;
 }
-.centDown svg {
-  margin-left: 5px;
-}
-.centDown1,
-.centDown2 {
-  display: flex;
-  align-items: center;
-  padding: 12px 25px;
-  margin: 0 5px;
-  border: 1px solid var(--accent);
-}
-.centDown1 {
-  background-color: var(--accent);
-}
-.centDown2 a,
+
 svg {
   color: var(--accent);
-}
-.trans a {
-  margin-right: 0px;
-  transition: margin-right 0.2s;
-}
-.trans:hover a {
-  margin-right: 5px;
 }
 @media only screen and (max-width: 900px) {
   .disp {

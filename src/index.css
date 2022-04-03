@@ -28,7 +28,7 @@ html {
 *::after,
 *::before {
   box-sizing: inherit;
-  font-family: "Roboto", sans-serif;
+  font-family: "Indie Flower", cursive;
   margin: 0;
   padding: 0;
 }
@@ -69,4 +69,32 @@ video {
 
 body {
   background-color: var(--bg);
+}
+.btn {
+  display: flex;
+  align-items: center;
+  padding: 12px 25px;
+  margin: 0 5px;
+  letter-spacing: 2px;
+  border: 1px solid var(--accent);
+}
+.btn-solid {
+  color: white;
+  background-color: var(--accent);
+}
+.btn-solid span,
+.btn-solid svg {
+  color: white;
+}
+.btn-trans,
+.btn-trans span,
+.btn-trans svg {
+  color: var(--accent);
+}
+.tsvg svg {
+  margin-left: 5px;
+  transition: all 0.2s;
+}
+.tsvg:hover svg {
+  margin-left: 8px;
 }

@@ -8,7 +8,7 @@ import dog5 from "../assests/dogs/5.jpg";
 import dog6 from "../assests/dogs/6.jpg";
 import dog7 from "../assests/dogs/7.jpg";
 
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ArrowRight } from "react-feather";
 
 const Hero = () => {
@@ -32,14 +32,14 @@ const Hero = () => {
           Get your friend <span>Today</span>
         </p>
         <div className={s.centDown}>
-          <div className={`${s.centDown1} ${s.trans}`}>
-            <NavLink to="/new">Adopt a doggo</NavLink>
-            <ArrowRight strokeWidth={2} color={"white"} size={19} />
-          </div>
-          <div className={`${s.centDown2} ${s.trans}`}>
-            <NavLink to="/new">Put for adoption</NavLink>
+          <Link to="/explore" className={"btn btn-solid tsvg"}>
+            <span>Put for adoption</span>
             <ArrowRight strokeWidth={2} size={19} />
-          </div>
+          </Link>
+          <Link to="/explore" className={"btn btn-trans tsvg"}>
+            <span>Adopt a doggo</span>
+            <ArrowRight strokeWidth={2} size={19} />
+          </Link>
         </div>
       </div>
     </div>

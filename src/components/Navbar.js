@@ -22,22 +22,22 @@ const Navbar = () => {
       <div className={s.tabs}>
         <div className={s.navGroup}>
           <NavLink to="/explore">explore</NavLink>
-          <Compass strokeWidth={1} size={22} />
+          <Compass strokeWidth={2} size={22} />
         </div>
         <div className={s.navGroup}>
           <NavLink to="/about">about us</NavLink>
-          <Book strokeWidth={1} size={18} />
+          <Book strokeWidth={2} size={18} />
         </div>
         <div className={s.navGroup}>
           {user ? (
             <>
               <span onClick={() => dispatch(signOut())}>sign out</span>
-              <LogIn strokeWidth={1} size={18} />
+              <LogIn strokeWidth={2} size={18} />
             </>
           ) : (
             <>
               <span onClick={() => dispatch(signIn())}>sign in</span>
-              <LogOut strokeWidth={1} size={18} />
+              <LogOut strokeWidth={2} size={18} />
             </>
           )}
         </div>
