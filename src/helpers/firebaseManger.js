@@ -74,6 +74,12 @@ export const getData = async (str, uid = null) => {
       // return all the dogs
       querySnapshot = await getDocs(collection(db, "doggo"));
       break;
+    case "myDoggo":
+      // return your dogs
+      querySnapshot = await getDocs(
+        query(collection(db, "doggo"), where("owner", "==", uid))
+      );
+      break;
     case "doggoDetail":
       // return detail of a specific dog
       querySnapshot = await getDocs(collection(db, `doggo/${uid}`));

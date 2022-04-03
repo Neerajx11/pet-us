@@ -37,7 +37,7 @@ const DoggoCard = ({ data }) => {
     <div className={s.main} onClick={clickHandler}>
       <div className={s.imgCtr}>
         <img
-          src={data?.photoUrl ? data?.photoUrl : sampleImageUrl}
+          src={data?.photoURL ? data?.photoURL : sampleImageUrl}
           alt={data.name}
         />
         <span className={s.breed}>{data.breed}</span>
