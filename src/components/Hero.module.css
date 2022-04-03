@@ -1,0 +1,112 @@
+.main {
+  height: max-content;
+  margin: 35px auto;
+  position: relative;
+  padding: 20px 0;
+  border-radius: 40px 40px 0 0;
+}
+.main img {
+  transition: transform 0.3s;
+}
+.main img:hover {
+  transform: scale(1.1);
+}
+.circleS,
+.circleM,
+.circleL {
+  border-radius: 50%;
+  border: 3px solid var(--accent);
+  padding: 2px;
+}
+.circleS {
+  width: 80px;
+  height: 80px;
+}
+.circleM {
+  width: 100px;
+  height: 100px;
+}
+.circleL {
+  width: 150px;
+  height: 150px;
+}
+.first,
+.second,
+.third {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 50px;
+}
+.second {
+  justify-content: space-between;
+  padding: 0 100px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.content p {
+  font-size: 40px;
+}
+.links a {
+  background-color: var(--accent);
+  border: 1px solid var(--secondary);
+  padding: 12px 20px;
+  margin: 40px 30px;
+}
+.center {
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+}
+.center p {
+  font-size: 40px;
+  font-weight: 600;
+}
+.center p span {
+  text-decoration: underline;
+}
+.centDown {
+  width: max-content;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+}
+.centDown svg {
+  margin-left: 5px;
+}
+.centDown1,
+.centDown2 {
+  display: flex;
+  align-items: center;
+  padding: 12px 25px;
+  margin: 0 5px;
+  border: 1px solid var(--accent);
+}
+.centDown1 {
+  background-color: var(--accent);
+}
+.centDown2 a,
+svg {
+  color: var(--accent);
+}
+.trans a {
+  margin-right: 0px;
+  transition: margin-right 0.2s;
+}
+.trans:hover a {
+  margin-right: 5px;
+}
+@media only screen and (max-width: 900px) {
+  .disp {
+    visibility: hidden;
+  }
+  .main {
+    margin: 0 auto;
+  }
+}
