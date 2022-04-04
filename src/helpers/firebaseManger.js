@@ -77,7 +77,7 @@ export const getData = async (str, uid = null) => {
     case "myDoggo":
       // return your dogs
       querySnapshot = await getDocs(
-        query(collection(db, "doggo"), where("owner", "==", uid))
+        query(collection(db, "doggo"), where("owner.id", "==", uid))
       );
       break;
     case "doggoDetail":
