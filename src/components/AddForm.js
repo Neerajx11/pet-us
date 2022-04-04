@@ -8,14 +8,7 @@ const initialValues = {
   city: "",
   breed: "",
   description: "",
-  isVaccinated: "",
-  // photoUrl:
-  //   "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg",
-  // owner: {
-  //   name: "Jason Smith",
-  //   photoUrl:
-  //     "https://4.img-dpreview.com/files/p/E~TS590x0~articles/3925134721/0266554465.jpeg",
-  // },
+  isVaccinated: "false",
   contactDetail: {
     phone: "",
     instagram: "",
@@ -23,11 +16,9 @@ const initialValues = {
     facebook: "",
   },
   age: {
-    year: 0,
-    month: 0,
+    year: "",
+    month: "",
   },
-
-  // uid: "6bGS2DN0ZGk4XamMf0xo", auto generate
 };
 const reqMsg = "This field is required";
 const phoneMsg = "Enter a valid phone number";
@@ -37,7 +28,7 @@ const validationSchema = Yup.object({
   name: Yup.string().required(reqMsg),
   city: Yup.string().required(reqMsg),
   breed: Yup.string().required(reqMsg),
-  isVaccinated: Yup.boolean().required(reqMsg),
+  isVaccinated: Yup.boolean(),
   contactDetail: Yup.object().shape({
     email: Yup.string().email("Invalid email").required(reqMsg),
     phone: Yup.string().min(10, phoneMsg).max(10, phoneMsg),
@@ -78,7 +69,7 @@ const AddForm = ({ subHandler, progress }) => {
               className={s.txtInp}
               name="name"
               type="text"
-              placeholder="name"
+              placeholder="Enter dog's name"
             />
             <ErrorMessage name="name" render={Error} />
           </div>
@@ -90,7 +81,7 @@ const AddForm = ({ subHandler, progress }) => {
               className={s.txtInp}
               name="city"
               type="text"
-              placeholder="city"
+              placeholder="Dog's location"
             />
             <ErrorMessage name="city" render={Error} />
           </div>
@@ -102,7 +93,7 @@ const AddForm = ({ subHandler, progress }) => {
               className={s.txtInp}
               name="breed"
               type="text"
-              placeholder="breed"
+              placeholder="Breed of the dog"
             />
             <ErrorMessage name="breed" render={Error} />
           </div>
@@ -114,7 +105,7 @@ const AddForm = ({ subHandler, progress }) => {
               className={s.txtInp}
               name="description"
               type="text"
-              placeholder="description"
+              placeholder="Something about the dog"
               as="textarea"
             />
             <ErrorMessage name="description" render={Error} />
@@ -127,11 +118,10 @@ const AddForm = ({ subHandler, progress }) => {
               className={s.txtInp}
               name="isVaccinated"
               type="text"
-              placeholder="isVaccinated"
               as="select"
             >
-              <option value={true}>Yes</option>
               <option value={false}>No</option>
+              <option value={true}>Yes</option>
             </Field>
             <ErrorMessage name="isVaccinated" render={Error} />
           </div>
@@ -144,7 +134,7 @@ const AddForm = ({ subHandler, progress }) => {
                 className={s.txtInp}
                 name="age.year"
                 type="number"
-                placeholder="age.year"
+                placeholder="Year"
               />
               <ErrorMessage name="age.month" render={Error} />
             </div>
@@ -154,7 +144,7 @@ const AddForm = ({ subHandler, progress }) => {
                 className={s.txtInp}
                 name="age.month"
                 type="number"
-                placeholder="age.month"
+                placeholder="Month"
               />
               <ErrorMessage name="age.month" render={Error} />
             </div>
@@ -168,7 +158,7 @@ const AddForm = ({ subHandler, progress }) => {
                 className={s.txtInp}
                 name="contactDetail.phone"
                 type="number"
-                placeholder="contactDetail.phone"
+                placeholder="Phone number"
               />
               <ErrorMessage name="contactDetail.phone" render={Error} />
             </div>
@@ -178,7 +168,7 @@ const AddForm = ({ subHandler, progress }) => {
                 className={s.txtInp}
                 name="contactDetail.instagram"
                 type="text"
-                placeholder="contactDetail.instagram"
+                placeholder="Instagram"
               />
               <ErrorMessage name="contactDetail.instagram" render={Error} />
             </div>
@@ -190,7 +180,7 @@ const AddForm = ({ subHandler, progress }) => {
                 className={s.txtInp}
                 name="contactDetail.email"
                 type="text"
-                placeholder="contactDetail.email"
+                placeholder="Email"
               />
               <ErrorMessage name="contactDetail.email" render={Error} />
             </div>
@@ -200,7 +190,7 @@ const AddForm = ({ subHandler, progress }) => {
                 className={s.txtInp}
                 name="contactDetail.facebook"
                 type="text"
-                placeholder="contactDetail.facebook"
+                placeholder="Facebook"
               />
               <ErrorMessage name="contactDetail.facebook" render={Error} />
             </div>
