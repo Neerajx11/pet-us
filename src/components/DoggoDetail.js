@@ -9,7 +9,7 @@ import s from "./DoggoDetail.module.css";
 const DoggoDetail = () => {
   const { id } = useParams();
   const [data, setData] = useState(null);
-  const { uid } = useSelector((state) => state.auth.user);
+  const { uid = null } = useSelector((state) => state.auth.user);
 
   useEffect(() => {
     const fetchData = async () => {
