@@ -65,4 +65,7 @@
     padding: 18px 20px;
     margin-bottom: 0;
   }
+  .tabs {
+    width: 300px;
+  }
 }

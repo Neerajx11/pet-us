@@ -95,3 +95,44 @@ svg {
     margin: 0 auto;
   }
 }
+@media only screen and (max-width: 550px) {
+  .center p {
+    font-size: 35px;
+  }
+  .centDown a {
+    padding: 12px 15px;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .centDown a {
+    padding: 8px 10px;
+    letter-spacing: 0;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .center p {
+    font-size: 28px;
+  }
+  .centDown {
+    flex-direction: column;
+  }
+  .centDown a {
+    margin: 10px auto;
+  }
+  .center {
+    top: 50%;
+  }
+  .first,
+  .second,
+  .third {
+    margin: 40px 0;
+  }
+  .circleM {
+    width: 70px;
+    height: 70px;
+  }
+  .circleL {
+    width: 120px;
+    height: 120px;
+  }
+}

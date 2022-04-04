@@ -9,16 +9,6 @@
   --lgrad: linear-gradient(to top right, #a63ec535, #f190b7d3);
 }
 
-:root {
-  --v18: 18px;
-  --v16: 16px;
-  --v14: 14px;
-  --v12: 12px;
-  --v10: 10px;
-  --v8: 8px;
-  --v4: 4px;
-}
-
 html {
   box-sizing: border-box;
   color: var(--black);
@@ -69,6 +59,7 @@ video {
 
 body {
   background-color: var(--bg);
+  overflow-x: hidden;
 }
 .btn {
   display: flex;
