@@ -2,10 +2,12 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { useEffect, useState } from "react";
 import { storage } from "../firebase";
 
+import s from "./UploadImage.module.css";
+
 const sampleImageUrl =
   "https://img.freepik.com/free-vector/cute-dog-bites-bone-cartoon-vector-icon-illustration-animal-nature-icon-concept-isolated-premium-vector-flat-cartoon-style_138676-3743.jpg";
 
-const UploadImage = ({ progress, setProgress, upHandler }) => {
+const UploadImage = ({ progress, setProgress, upHandler, className }) => {
   const [file, setFile] = useState(null);
 
   useEffect(() => {
@@ -51,13 +53,9 @@ const UploadImage = ({ progress, setProgress, upHandler }) => {
   }, [file, upHandler, setProgress]);
 
   return (
-    <div>
-      <h3>Upload Image</h3>
-      <img
-        src={file ? URL.createObjectURL(file) : sampleImageUrl}
-        style={{ width: "150px", height: "150px", objectFit: "contain" }}
-        alt="dog"
-      />
+    <div className={`${className} ${s.main}`}>
+      <h2>Upload Image</h2>
+      <img src={file ? URL.createObjectURL(file) : sampleImageUrl} alt="dog" />
       <input
         type="file"
         name="dog image"

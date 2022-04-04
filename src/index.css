@@ -77,6 +77,7 @@ body {
   margin: 0 5px;
   letter-spacing: 2px;
   border: 1px solid var(--accent);
+  cursor: pointer;
 }
 .btn-solid {
   color: white;
@@ -106,4 +107,10 @@ body {
   position: relative;
   max-width: 1200px;
   margin: auto;
+}
+@media only screen and (max-width: 1000px) {
+  .head {
+    font-size: 30px;
+    margin: 40px 30px 10px 30px;
+  }
 }

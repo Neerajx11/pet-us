@@ -53,9 +53,9 @@ const Error = (msg) => (
   </div>
 );
 
-const AddForm = ({ subHandler, progress }) => {
+const AddForm = ({ subHandler, progress, className }) => {
   return (
-    <div className={s.main}>
+    <div className={`${s.main} ${className}`}>
       <Formik
         initialValues={initialValues}
         onSubmit={subHandler}
@@ -63,8 +63,8 @@ const AddForm = ({ subHandler, progress }) => {
       >
         <Form>
           {/* name */}
-          <div>
-            <label htmlFor="name">Name : </label>
+          <div className={s.inpCtr}>
+            <label htmlFor="name">Name* : </label>
             <Field
               className={s.txtInp}
               name="name"
@@ -75,8 +75,8 @@ const AddForm = ({ subHandler, progress }) => {
           </div>
 
           {/* city */}
-          <div>
-            <label htmlFor="city">City : </label>
+          <div className={s.inpCtr}>
+            <label htmlFor="city">City* : </label>
             <Field
               className={s.txtInp}
               name="city"
@@ -87,8 +87,8 @@ const AddForm = ({ subHandler, progress }) => {
           </div>
 
           {/* breed */}
-          <div>
-            <label htmlFor="breed">Breed : </label>
+          <div className={s.inpCtr}>
+            <label htmlFor="breed">Breed* : </label>
             <Field
               className={s.txtInp}
               name="breed"
@@ -99,7 +99,7 @@ const AddForm = ({ subHandler, progress }) => {
           </div>
 
           {/* description */}
-          <div>
+          <div className={s.inpCtr}>
             <label htmlFor="description">Description : </label>
             <Field
               className={s.txtInp}
@@ -112,8 +112,8 @@ const AddForm = ({ subHandler, progress }) => {
           </div>
 
           {/* vaccination status */}
-          <div>
-            <label htmlFor="isVaccinated">Vaccination Status : </label>
+          <div className={s.inpCtr}>
+            <label htmlFor="isVaccinated">Is your dog vaccinated* : </label>
             <Field
               className={s.txtInp}
               name="isVaccinated"
@@ -128,23 +128,23 @@ const AddForm = ({ subHandler, progress }) => {
 
           {/* age */}
           <div>
-            <div>
-              <label htmlFor="age.year">Year : </label>
+            <div className={s.inpCtr}>
+              <label htmlFor="age.year">Year* : </label>
               <Field
                 className={s.txtInp}
                 name="age.year"
                 type="number"
-                placeholder="Year"
+                placeholder="Age of your dog (years)"
               />
               <ErrorMessage name="age.month" render={Error} />
             </div>
-            <div>
-              <label htmlFor="age.month">Months : </label>
+            <div className={s.inpCtr}>
+              <label htmlFor="age.month">Months* : </label>
               <Field
                 className={s.txtInp}
                 name="age.month"
                 type="number"
-                placeholder="Month"
+                placeholder="Age of your dog (months)"
               />
               <ErrorMessage name="age.month" render={Error} />
             </div>
@@ -152,7 +152,7 @@ const AddForm = ({ subHandler, progress }) => {
 
           {/* contact details */}
           <div>
-            <div>
+            <div className={s.inpCtr}>
               <label htmlFor="contactDetail.phone">Phone : </label>
               <Field
                 className={s.txtInp}
@@ -162,7 +162,7 @@ const AddForm = ({ subHandler, progress }) => {
               />
               <ErrorMessage name="contactDetail.phone" render={Error} />
             </div>
-            <div>
+            <div className={s.inpCtr}>
               <label htmlFor="contactDetail.instagram">Instagram : </label>
               <Field
                 className={s.txtInp}
@@ -174,8 +174,8 @@ const AddForm = ({ subHandler, progress }) => {
             </div>
           </div>
           <div>
-            <div>
-              <label htmlFor="contactDetail.email">Email : </label>
+            <div className={s.inpCtr}>
+              <label htmlFor="contactDetail.email">Email* : </label>
               <Field
                 className={s.txtInp}
                 name="contactDetail.email"
@@ -184,7 +184,7 @@ const AddForm = ({ subHandler, progress }) => {
               />
               <ErrorMessage name="contactDetail.email" render={Error} />
             </div>
-            <div>
+            <div className={s.inpCtr}>
               <label>Facebook : </label>
               <Field
                 className={s.txtInp}
@@ -198,7 +198,11 @@ const AddForm = ({ subHandler, progress }) => {
 
           {/* end */}
 
-          <button disabled={progress !== 0 && progress < 100} type="submit">
+          <button
+            className={`btn btn-solid ${s.fBtn}`}
+            disabled={progress !== 0 && progress < 100}
+            type="submit"
+          >
             Submit
           </button>
         </Form>

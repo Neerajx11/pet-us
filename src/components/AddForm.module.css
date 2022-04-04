@@ -1,0 +1,29 @@
+.inpCtr {
+  margin-bottom: 15px;
+}
+.inpCtr label {
+  display: block;
+  color: var(--secondary);
+  margin-bottom: 2px;
+}
+.txtInp {
+  padding: 10px 12px;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 100%;
+}
+.txtInp::placeholder {
+  font-size: 14px;
+}
+.inpCtr textarea {
+  height: 120px;
+}
+.fBtn {
+  margin: 40px 0 0;
+}
+@media only screen and (max-width: 750px) {
+  .fBtn {
+    margin: 40px auto 0;
+  }
+}

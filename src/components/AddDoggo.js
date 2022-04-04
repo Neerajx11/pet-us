@@ -1,10 +1,13 @@
 import { useCallback, useRef, useState } from "react";
+
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addDoggoDetail } from "../helpers/firebaseManger";
-import s from "./AddDoggo.module.css";
+
 import AddForm from "./AddForm";
 import UploadImage from "./UploadImage";
+
+import s from "./AddDoggo.module.css";
 
 const AddDoggo = () => {
   const { user } = useSelector((state) => state.auth);
@@ -37,13 +40,14 @@ const AddDoggo = () => {
   return (
     <div className={s.main}>
       <p className="head">Put for adoption</p>
-      <div>
+      <div className={s.ctr}>
         <UploadImage
           upHandler={upHandler}
           progress={prog}
           setProgress={setProg}
+          className={s.left}
         />
-        <AddForm subHandler={subHandler} progress={prog} />
+        <AddForm className={s.right} subHandler={subHandler} progress={prog} />
       </div>
     </div>
   );
