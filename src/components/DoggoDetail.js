@@ -15,7 +15,6 @@ const DoggoDetail = () => {
     const fetchData = async () => {
       const docSnap = await getSingleDocument("doggo", id);
       setData(docSnap);
-      console.log(docSnap);
     };
     fetchData();
   }, [id]);
@@ -23,7 +22,7 @@ const DoggoDetail = () => {
   const navigate = useNavigate();
   const clickHandler = async () => {
     await deleteDoggo(id);
-    navigate.push("/explore", { replace: true });
+    navigate("/explore", { replace: true });
   };
 
   return (

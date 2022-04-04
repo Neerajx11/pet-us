@@ -15,6 +15,9 @@ const Profile = () => {
       <div>
         <Link to="/mydoggo">my doggo</Link>
       </div>
+      <div>
+        <Link to="/add">add doggo</Link>
+      </div>
       <div className={s.sign} onClick={() => dispatch(signOut())}>
         <span>sign out</span>
         <LogIn strokeWidth={2} size={16} color={"white"} />

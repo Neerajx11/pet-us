@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import { storage } from "../firebase";
 
 const sampleImageUrl =
-  "https://thumbs.dreamstime.com/z/dog-logo-design-vector-template-icon-153847249.jpg";
+  "https://img.freepik.com/free-vector/cute-dog-bites-bone-cartoon-vector-icon-illustration-animal-nature-icon-concept-isolated-premium-vector-flat-cartoon-style_138676-3743.jpg";
 
-const UploadImage = () => {
+const UploadImage = ({ progress, setProgress, upHandler }) => {
   const [file, setFile] = useState(null);
 
   useEffect(() => {
@@ -20,6 +20,7 @@ const UploadImage = () => {
         (snapshot) => {
           const progress =
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          setProgress(progress);
 
           console.log("Upload is " + progress + "% done");
 
@@ -35,17 +36,19 @@ const UploadImage = () => {
           }
         },
         (error) => {
+          upHandler(sampleImageUrl);
           console.log(error);
         },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+            upHandler(downloadURL);
             console.log("File available at", downloadURL);
           });
         }
       );
     };
     file && uploadFile();
-  }, [file]);
+  }, [file, upHandler, setProgress]);
 
   return (
     <div>
@@ -61,6 +64,7 @@ const UploadImage = () => {
         id="file"
         onChange={(e) => setFile(e.target.files[0])}
         placeholder="choose doggo image"
+        disabled={progress !== 0 && progress < 100}
       />
     </div>
   );

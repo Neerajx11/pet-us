@@ -32,7 +32,7 @@ const Hero = () => {
           Get your friend <span>Today</span>
         </p>
         <div className={s.centDown}>
-          <Link to="/explore" className={"btn btn-solid tsvg"}>
+          <Link to="/add" className={"btn btn-solid tsvg"}>
             <span>Put for adoption</span>
             <ArrowRight strokeWidth={2} size={19} />
           </Link>

@@ -1,6 +1,6 @@
 .main {
   position: absolute;
-  bottom: -75px;
+  bottom: -95px;
   right: 0;
   display: flex;
   flex-direction: column;
@@ -26,6 +26,5 @@
 .sign {
   display: flex;
   align-items: center;
-  margin-top: 5px;
   border-radius: 5px;
 }

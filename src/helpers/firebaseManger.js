@@ -105,9 +105,9 @@ export const getSingleDocument = async (str, uid) => {
  * @param {string} id : generate this from uuid v4()
  * @description upload image first if avilable then add doggo
  */
-export const addDoggoDetail = async (data, id) => {
+export const addDoggoDetail = async (data) => {
   try {
-    const res = await addDoc(collection(db, "doggo", id), {
+    const res = await addDoc(collection(db, "doggo"), {
       ...data,
       timeStamp: serverTimestamp(),
     });
@@ -136,7 +136,7 @@ export const updateDoggo = async (uid, data) => {
  */
 export const deleteDoggo = async (uid) => {
   try {
-    await deleteDoc(doc(db), "doggo", uid);
+    await deleteDoc(doc(db, "doggo", uid));
   } catch (err) {
     console.log(err);
   }
