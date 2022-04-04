@@ -1,5 +1,4 @@
 import CardCtr from "./CardCtr";
-import s from "./Explore.module.css";
 /*
 name string
 breed string
@@ -16,7 +15,7 @@ photoUrl : string
 
 const Explore = () => {
   return (
-    <div className={s.main}>
+    <div>
       <p className={"head"}>Explore</p>
       <CardCtr str="doggo" />
     </div>

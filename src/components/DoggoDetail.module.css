@@ -1,0 +1,97 @@
+.main {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 6px 7px 19px -2px rgba(0, 0, 0, 0.29);
+  -webkit-box-shadow: 6px 7px 19px -2px rgba(0, 0, 0, 0.29);
+  -moz-box-shadow: 6px 7px 19px -2px rgba(0, 0, 0, 0.29);
+}
+.left,
+.right {
+  padding: 35px;
+}
+.left {
+  width: 30%;
+}
+.right {
+  width: 70%;
+}
+.field span,
+.contactDet {
+  font-size: 18px;
+}
+.fTit,
+.contactDet {
+  color: var(--primary);
+}
+.fSec {
+  color: var(--accent);
+  margin-left: 6px;
+}
+.field:not(:first-child) {
+  margin: 20px 0;
+}
+.field {
+  margin: inherit 10px;
+}
+.contactDet {
+  margin-top: 50px;
+}
+.conIcon {
+  display: flex;
+  margin: 20px 0;
+}
+.conIcon a {
+  width: 70px;
+}
+.conIcon svg {
+  cursor: pointer;
+}
+.delBtn {
+  width: max-content;
+  background-color: var(--secondary);
+  cursor: pointer;
+  margin-top: 10px;
+  transition: transform 0.2s;
+}
+.delBtn:hover {
+  transform: scale(1.03);
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.postTit {
+  margin-top: 20px;
+  color: var(--secondary);
+  font-size: 18px;
+}
+.owner {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+.owner img {
+  width: 50px;
+  height: auto;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+@media only screen and (max-width: 1200px) {
+  .main {
+    margin: 20px 20px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .main {
+    flex-direction: column;
+  }
+  .left {
+    width: 100%;
+  }
+  .right {
+    width: 100%;
+  }
+}
