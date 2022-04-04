@@ -22,9 +22,10 @@ const DoggoDetail = () => {
 
   const navigate = useNavigate();
   const clickHandler = async () => {
-    await deleteDoggo();
+    await deleteDoggo(id);
     navigate.push("/explore", { replace: true });
   };
+
   return (
     <div>
       <p className="head">Doggie Detail</p>
