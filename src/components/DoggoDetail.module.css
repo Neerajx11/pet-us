@@ -29,9 +29,6 @@
   color: var(--accent);
   margin-left: 6px;
 }
-.field {
-  margin: inherit 10px;
-}
 .field:not(:first-child) {
   margin: 20px 0;
 }
