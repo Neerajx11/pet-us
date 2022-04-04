@@ -9,7 +9,7 @@ import s from "./DoggoDetail.module.css";
 const DoggoDetail = () => {
   const { id } = useParams();
   const [data, setData] = useState(null);
-  const { uid = null } = useSelector((state) => state.auth.user);
+  const { user } = useSelector((state) => state.auth);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -94,7 +94,7 @@ const DoggoDetail = () => {
                 )}
               </div>
             </div>
-            {data.owner.id === uid && (
+            {data.owner.id === user?.uid && (
               <div
                 className={`btn btn-solid ${s.delBtn}`}
                 onClick={clickHandler}
