@@ -118,6 +118,8 @@ svg {
   }
   .centDown a {
     margin: 10px auto;
+    width: 100%;
+    justify-content: space-between;
   }
   .center {
     top: 50%;
