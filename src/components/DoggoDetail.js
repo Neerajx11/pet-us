@@ -40,7 +40,9 @@ const DoggoDetail = () => {
           </div>
           <div className={s.right}>
             <div className={s.field}>
-              <span className={s.fTit}>Name :</span>
+              <span className={s.fTit} style={{ marginLeft: 0 }}>
+                Name :
+              </span>
               <span className={s.fSec}>{data.name}</span>
             </div>
             <div className={s.field}>
