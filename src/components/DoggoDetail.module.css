@@ -29,11 +29,11 @@
   color: var(--accent);
   margin-left: 6px;
 }
-.field:not(:first-child) {
-  margin: 20px 0;
-}
 .field {
   margin: inherit 10px;
+}
+.field:not(:first-child) {
+  margin: 20px 0;
 }
 .contactDet {
   margin-top: 50px;

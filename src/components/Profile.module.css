@@ -1,6 +1,6 @@
 .main {
   position: absolute;
-  bottom: -95px;
+  bottom: -115px;
   right: 0;
   display: flex;
   flex-direction: column;
@@ -8,7 +8,21 @@
   z-index: 3;
   background-color: var(--secondary);
   padding: 10px 5px;
-  border-radius: 4px;
+}
+.main::before {
+  content: "";
+  position: absolute;
+  transform: rotateZ(45deg);
+  top: -4px;
+  border-radius: 1px;
+  right: 5px;
+  z-index: 4;
+  background-color: var(--secondary);
+  width: 10px;
+  height: 10px;
+}
+.main div {
+  margin: 3px 0;
 }
 .main div a,
 .main span {
