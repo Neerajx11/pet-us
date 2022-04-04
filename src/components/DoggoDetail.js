@@ -84,9 +84,9 @@ const DoggoDetail = () => {
                     <Facebook />
                   </a>
                 )}
-                {data.contactDetail?.mail && (
+                {data.contactDetail?.email && (
                   <a
-                    href={`mailto:${data.contactDetail.mail}`}
+                    href={`mailto:${data.contactDetail.email}`}
                     rel="noreferrer"
                   >
                     <Mail />
