@@ -151,49 +151,47 @@ const AddForm = ({ subHandler, progress, className }) => {
           </div>
 
           {/* contact details */}
-          <div>
-            <div className={s.inpCtr}>
-              <label htmlFor="contactDetail.phone">Phone : </label>
-              <Field
-                className={s.txtInp}
-                name="contactDetail.phone"
-                type="number"
-                placeholder="Phone number"
-              />
-              <ErrorMessage name="contactDetail.phone" render={Error} />
-            </div>
-            <div className={s.inpCtr}>
-              <label htmlFor="contactDetail.instagram">Instagram : </label>
-              <Field
-                className={s.txtInp}
-                name="contactDetail.instagram"
-                type="text"
-                placeholder="Instagram"
-              />
-              <ErrorMessage name="contactDetail.instagram" render={Error} />
-            </div>
+          <div className={s.inpCtr}>
+            <label htmlFor="contactDetail.email">Email* : </label>
+            <Field
+              className={s.txtInp}
+              name="contactDetail.email"
+              type="text"
+              placeholder="Email"
+            />
+            <ErrorMessage name="contactDetail.email" render={Error} />
           </div>
-          <div>
-            <div className={s.inpCtr}>
-              <label htmlFor="contactDetail.email">Email* : </label>
-              <Field
-                className={s.txtInp}
-                name="contactDetail.email"
-                type="text"
-                placeholder="Email"
-              />
-              <ErrorMessage name="contactDetail.email" render={Error} />
-            </div>
-            <div className={s.inpCtr}>
-              <label>Facebook : </label>
-              <Field
-                className={s.txtInp}
-                name="contactDetail.facebook"
-                type="text"
-                placeholder="Facebook"
-              />
-              <ErrorMessage name="contactDetail.facebook" render={Error} />
-            </div>
+          <div className={s.inpCtr}>
+            <label htmlFor="contactDetail.phone">Phone : </label>
+            <Field
+              className={s.txtInp}
+              name="contactDetail.phone"
+              type="number"
+              placeholder="Phone number"
+            />
+            <ErrorMessage name="contactDetail.phone" render={Error} />
+          </div>
+          <div className={s.inpCtr}>
+            <label htmlFor="contactDetail.instagram">
+              Instagram Username:{" "}
+            </label>
+            <Field
+              className={s.txtInp}
+              name="contactDetail.instagram"
+              type="text"
+              placeholder="Instagram Username"
+            />
+            <ErrorMessage name="contactDetail.instagram" render={Error} />
+          </div>
+          <div className={s.inpCtr}>
+            <label>Facebook Link: </label>
+            <Field
+              className={s.txtInp}
+              name="contactDetail.facebook"
+              type="text"
+              placeholder="Facebook Link"
+            />
+            <ErrorMessage name="contactDetail.facebook" render={Error} />
           </div>
 
           {/* end */}
