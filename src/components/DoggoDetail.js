@@ -50,6 +50,12 @@ const DoggoDetail = () => {
               <span className={s.fSec}>{data.breed}</span>
             </div>
             <div className={s.field}>
+              <span className={s.fTit}>Age :</span>
+              <span className={s.fSec}>
+                {data.age.year} year {data.age.month} months
+              </span>
+            </div>
+            <div className={s.field}>
               <span className={s.fTit}>Location :</span>
               <span className={s.fSec}>{data.city}</span>
             </div>
