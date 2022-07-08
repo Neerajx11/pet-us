@@ -1,12 +1,10 @@
 :root {
-  --primary: #874356;
-  --secondary: #c65d7b;
-  --accent: #f68989;
-  --bg: #fff9f3;
+  --primary: #ff4c29;
+  --bgprimary: #334756;
+  --bgsecondary: #2c394b;
+  --bgdark: #082032;
   --white: #fff;
-  --lightgrey: #eee;
   --black: #000;
-  --lgrad: linear-gradient(to top right, #a63ec535, #f190b7d3);
 }
 
 html {
