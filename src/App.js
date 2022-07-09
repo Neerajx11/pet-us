@@ -4,20 +4,20 @@ import About from "./components/About";
 import AddDoggo from "./components/AddDoggo";
 import DoggoDetail from "./components/DoggoDetail";
 import Explore from "./components/Explore";
-import Home from "./components/Home";
 import MyDoggo from "./components/MyDoggo";
 import Navbar from "./components/Navbar";
 import NotFound from "./components/NotFound";
 import Private from "./components/Private";
 import SignIn from "./components/SignIn";
+import Landing from "./pages/Landing";
 
 const App = () => {
   return (
-    <div className="container">
+    <div>
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Landing />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/explore" element={<Explore />} />
           <Route path="/mydoggo" element={<Private component={MyDoggo} />} />
