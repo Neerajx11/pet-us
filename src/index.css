@@ -1,11 +1,3 @@
-:root {
-  --primary: #ff4c29;
-  --bgprimary: #334756;
-  --bgsecondary: #2c394b;
-  --bgdark: #082032;
-  --white: #fff;
-  --black: #000;
-}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
