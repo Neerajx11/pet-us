@@ -1,4 +1,5 @@
-#### Building new UI with [TailwindCSS](https://tailwindcss.com/)
+#### Building new UI with [TailwindCSS](https://tailwindcss.com/) 
+#### New design [Figma](https://www.figma.com/file/EBxa37QcsTEZYuyyCRAgtj/petUs?node-id=0%3A1)
 # petUs
 
 ### [Website](https://petus.vercel.app/) for adoption of puppies and dogs
