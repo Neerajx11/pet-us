@@ -43,11 +43,7 @@ const Navbar = () => {
           {user ? (
             <ProfileMenu />
           ) : (
-            <Button
-              text="Sign In"
-              className="bg-red-500 cursor-pointer"
-              onClick={() => dispatch(signIn())}
-            />
+            <Button text="Sign In" onClick={() => dispatch(signIn())} />
           )}
         </div>
         <div className="py-1 md:hidden">
@@ -59,21 +55,27 @@ const Navbar = () => {
         {showSideNav && (
           <div
             onClick={hideShowNav}
-            className="absolute top-0 left-0 w-screen h-screen bg-black cursor-pointer md:hidden bg-opacity-20"
+            className="absolute top-0 left-0 z-20 w-screen h-screen bg-black cursor-pointer md:hidden bg-opacity-20"
           ></div>
         )}
       </nav>
       <div
-        className={`absolute top-0 right-0 md:hidden ease-linear duration-200 shadow-md h-screen text-white w-80 bg-primary ${
+        className={`absolute top-0 right-0 z-30 md:hidden ease-linear duration-200 shadow-md h-screen text-white w-80 bg-primary ${
           !showSideNav && "translate-x-full"
         }`}
       >
-        <div className="flex justify-between items-center mx-4 text-white h-[12%]">
-          <img
-            src={user.photoURL}
-            className="w-12 h-12 border-[3px] transition-all duration-200 border-solid rounded-full cursor-pointer border-white-40"
-            alt={`${user.name} profile`}
-          />
+        <div
+          className={`flex ${
+            user ? "justify-between" : "justify-end"
+          } items-center mx-4 text-white h-[12%]`}
+        >
+          {user && (
+            <img
+              src={user.photoURL}
+              className="w-12 h-12 border-[3px] transition-all duration-200 border-solid rounded-full cursor-pointer border-white-40"
+              alt={`${user.name} profile`}
+            />
+          )}
           <X onClick={hideShowNav} className="w-12 h-12 cursor-pointer" />
         </div>
         <div
@@ -84,11 +86,17 @@ const Navbar = () => {
             <NavLink to="/explore">Explore</NavLink>
             <NavLink to="/about">About Us</NavLink>
             <NavLink to="/add">Add Doggo</NavLink>
-            <NavLink to="/manage">Manage Doggo</NavLink>
+            <NavLink to="/mydoggo">Manage Doggo</NavLink>
           </div>
-          <div className="cursor-pointer" onClick={() => dispatch(signOut())}>
-            Logout
-          </div>
+          {user ? (
+            <div className="cursor-pointer" onClick={() => dispatch(signOut())}>
+              Logout
+            </div>
+          ) : (
+            <div className="cursor-pointer" onClick={() => dispatch(signIn())}>
+              Sign In
+            </div>
+          )}
         </div>
       </div>
     </>
