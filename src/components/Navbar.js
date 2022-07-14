@@ -1,40 +1,97 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { signIn } from "../features/authSlice";
+import { signIn, signOut } from "../features/authSlice";
 import Button from "./Button";
+import { Menu, X } from "react-feather";
 
 import Logo from "./Logo";
+import ProfileMenu from "./ProfileMenu";
 
 const Navbar = () => {
   const user = useSelector((state) => state.auth.user);
   const dispatch = useDispatch();
 
+  const [showSideNav, setShowSideNav] = useState(false);
+
+  const hideShowNav = () => setShowSideNav(false);
+  const toggleShowNav = () => setShowSideNav((prev) => !prev);
+
+  useEffect(() => {
+    document.body.style.overflowY = showSideNav ? "hidden" : "auto";
+  }, [showSideNav]);
+
   return (
-    <nav className="px-8 py-4 shadow-md text-md flex justify-between items-center">
-      <NavLink to="/">
-        <Logo type="dark" />
-      </NavLink>
-      <div className="flex w-max tracking-wide font-medium justify-between items-center space-x-10">
-        <NavLink
-          to="/explore"
-          className="px-6 py-2 hover:text-primary transition-colors duration-200 hover:bg-primarylight"
-        >
-          Explore
+    <>
+      <nav className="flex items-center justify-between px-8 py-4 shadow-md text-md">
+        <NavLink to="/">
+          <Logo type="dark" />
         </NavLink>
-        <NavLink
-          to="/about"
-          className="px-6 py-2 hover:text-primary transition-colors duration-200 hover:bg-primarylight"
+        <div className="items-center justify-between hidden space-x-10 font-semibold tracking-wide md:flex w-max text-bgprimary">
+          <NavLink
+            to="/explore"
+            className="px-6 py-2 transition-colors duration-200 hover:text-primary hover:bg-primarylight"
+          >
+            Explore
+          </NavLink>
+          <NavLink
+            to="/about"
+            className="px-6 py-2 transition-colors duration-200 hover:text-primary hover:bg-primarylight"
+          >
+            About
+          </NavLink>
+          {user ? (
+            <ProfileMenu />
+          ) : (
+            <Button
+              text="Sign In"
+              className="bg-red-500 cursor-pointer"
+              onClick={() => dispatch(signIn())}
+            />
+          )}
+        </div>
+        <div className="py-1 md:hidden">
+          <Menu
+            className="w-8 h-8 cursor-pointer text-primary"
+            onClick={toggleShowNav}
+          />
+        </div>
+        {showSideNav && (
+          <div
+            onClick={hideShowNav}
+            className="absolute top-0 left-0 w-screen h-screen bg-black cursor-pointer md:hidden bg-opacity-20"
+          ></div>
+        )}
+      </nav>
+      <div
+        className={`absolute top-0 right-0 md:hidden ease-linear duration-200 shadow-md h-screen text-white w-80 bg-primary ${
+          !showSideNav && "translate-x-full"
+        }`}
+      >
+        <div className="flex justify-between items-center mx-4 text-white h-[12%]">
+          <img
+            src={user.photoURL}
+            className="w-12 h-12 border-[3px] transition-all duration-200 border-solid rounded-full cursor-pointer border-white-40"
+            alt={`${user.name} profile`}
+          />
+          <X onClick={hideShowNav} className="w-12 h-12 cursor-pointer" />
+        </div>
+        <div
+          onClick={hideShowNav}
+          className="flex flex-col justify-between font-semibold tracking-wide h-[83%] pl-4 pt-8"
         >
-          About
-        </NavLink>
-        <Button
-          text="Sign In"
-          className="cursor-pointer bg-red-500"
-          onClick={() => dispatch(signIn())}
-        />
+          <div className="flex flex-col space-y-12">
+            <NavLink to="/explore">Explore</NavLink>
+            <NavLink to="/about">About Us</NavLink>
+            <NavLink to="/add">Add Doggo</NavLink>
+            <NavLink to="/manage">Manage Doggo</NavLink>
+          </div>
+          <div className="cursor-pointer" onClick={() => dispatch(signOut())}>
+            Logout
+          </div>
+        </div>
       </div>
-    </nav>
+    </>
   );
 };
 
