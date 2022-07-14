@@ -5,7 +5,7 @@ import s from "./CardCtr.module.css";
 import DoggoCard from "./DoggoCard";
 import Loader from "./Loader";
 
-const CardCtr = ({ str = "doggo", uid = "null" }) => {
+const CardCtr = ({ str = "doggo", uid = "null", msg = false }) => {
   const [doggo, setDoggo] = useState([]);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const CardCtr = ({ str = "doggo", uid = "null" }) => {
 
   const list = doggo.map((data) => <DoggoCard data={data} key={data.uid} />);
 
-  const dummy = ["", "", "", "", ""].map((el) => (
+  const dummy = ["", "", "", "", ""].map(() => (
     <div className={s.dummy} key={v4()}></div>
   ));
 
@@ -30,7 +30,15 @@ const CardCtr = ({ str = "doggo", uid = "null" }) => {
           {dummy}
         </div>
       ) : (
-        <Loader />
+        <>
+          {msg ? (
+            <h3 style={{ marginLeft: "25px" }}>
+              You have not added any dog yet
+            </h3>
+          ) : (
+            <Loader />
+          )}
+        </>
       )}
     </div>
   );

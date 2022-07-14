@@ -7,7 +7,7 @@ const MyDoggo = () => {
   return (
     <div>
       <p className={"head"}>My Doggo</p>
-      <CardCtr str="myDoggo" uid={uid} />
+      <CardCtr msg={true} str="myDoggo" uid={uid} />
     </div>
   );
 };
