@@ -48,13 +48,13 @@ const Card = ({ data }) => {
       </p>
       <div className="flex space-x-4 text-bgprimary justify-between">
         <div className="flex space-x-1 items-center">
-          <Book className="w-5 h-5" />
+          <Book className="w-[18px] h-[18px]" />
           <span className="capitalize font-bold  tracking-wide">
             {data.breed}
           </span>
         </div>
         <div className="flex space-x-1 items-center">
-          <MapPin className="w-5 h-5" />
+          <MapPin className="w-[18px] h-[18px]" />
           <span className="capitalize font-bold text-bgprimary tracking-wide">
             {data.city}
           </span>
