@@ -9,7 +9,7 @@ const Heading = ({
   if (sub) {
     return (
       <p
-        className={`uppercase font-bold m-2 text-center text-primary text-lg ${className}`}
+        className={`uppercase font-bold m-2 text-center text-primary text-lg ${className} mx-4`}
         {...props}
       >
         {text}
@@ -18,7 +18,7 @@ const Heading = ({
   }
   return (
     <p
-      className={`uppercase m-2 text-center font-black text-bgprimary text-3xl ${className}`}
+      className={`uppercase m-2 text-center font-black text-bgprimary text-3xl ${className} mx-4`}
       {...props}
     >
       {text}

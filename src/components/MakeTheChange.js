@@ -4,7 +4,7 @@ import Heading from "./Heading";
 
 const MakeTheChange = () => {
   return (
-    <div className="my-8 shadow-md">
+    <div className="mt-8 shadow-md">
       <Heading text="adopt a dog" sub={true} />
       <Heading text="Make the change" />
       <div className="flex justify-around flex-wrap my-8">

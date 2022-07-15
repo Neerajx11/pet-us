@@ -1,10 +1,20 @@
 import React from "react";
 
-const Button = ({ text, className, ...props }) => {
+const Button = ({ text, className, variant = "", ...props }) => {
+  if (variant === "transparent") {
+    return (
+      <div
+        {...props}
+        className={`text-center font-bold tracking-wide bg-white cursor-pointer border border-solid border-primary hover:bg-primary hover:text-white transition-all divide-fuchsia-200 mx-0 text-primary px-6 py-2 rounded-sm ${className}`}
+      >
+        {text || "Button"}
+      </div>
+    );
+  }
   return (
     <div
       {...props}
-      className={`text-center bg-red-500 cursor-pointer border border-solid border-primary hover:bg-white hover:text-primary transition-all divide-fuchsia-200 mx-0 text-white px-6 py-2 rounded-sm ${className}`}
+      className={`text-center font-bold tracking-wide bg-primary cursor-pointer border border-solid border-primary hover:bg-white hover:text-primary transition-all divide-fuchsia-200 mx-0 text-white px-6 py-2 rounded-sm ${className}`}
     >
       {text || "Button"}
     </div>
