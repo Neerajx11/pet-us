@@ -7,6 +7,7 @@ import { Menu, X } from "react-feather";
 
 import Logo from "./Logo";
 import ProfileMenu from "./ProfileMenu";
+import DefaultProfileImg from "../assests/images/defaultProfile.jpg";
 
 const Navbar = () => {
   const user = useSelector((state) => state.auth.user);
@@ -55,14 +56,14 @@ const Navbar = () => {
         {showSideNav && (
           <div
             onClick={hideShowNav}
-            className="absolute top-0 left-0 z-20 w-screen h-screen bg-black cursor-pointer md:hidden bg-opacity-20"
+            className="fixed top-0 left-0 z-20 w-screen h-screen bg-black cursor-pointer md:hidden bg-opacity-20"
           ></div>
         )}
       </nav>
 
       {/* SideNav Mobile Screen */}
       <div
-        className={`absolute top-0 right-0 z-30 md:hidden ease-linear duration-200 shadow-md h-screen text-white w-80 bg-primary ${
+        className={`fixed top-0 right-0 z-30 md:hidden ease-linear duration-200 shadow-md h-screen text-white w-80 bg-primary ${
           !showSideNav && "translate-x-full"
         }`}
       >
@@ -73,8 +74,8 @@ const Navbar = () => {
         >
           {user && (
             <img
-              src={user.photoURL}
-              className="w-12 h-12 border-[3px] transition-all duration-200 border-solid rounded-full cursor-pointer border-white-40"
+              src={user.photoURL || DefaultProfileImg}
+              className="w-12 h-12 border-[3px] object-cover transition-all duration-200 border-solid rounded-full cursor-pointer border-white-40"
               alt={`${user.name} profile`}
             />
           )}

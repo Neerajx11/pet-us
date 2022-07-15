@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { signOut } from "../features/authSlice";
 
+import DefaultProfileImg from "../assests/images/defaultProfile.jpg";
+
 const ProfileMenu = () => {
   const user = useSelector((state) => state.auth.user);
   const dispatch = useDispatch();
@@ -25,7 +27,7 @@ const ProfileMenu = () => {
   return (
     <div className="relative">
       <img
-        src={user.photoURL}
+        src={user.photoURL || DefaultProfileImg}
         className="w-10 border-[3px] transition-all duration-200 border-solid rounded-full cursor-pointer border-orange-400 hover:border-primary"
         alt={`${user.name} profile`}
         onClick={profileClickHandler}
