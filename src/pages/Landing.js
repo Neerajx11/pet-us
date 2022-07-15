@@ -1,5 +1,6 @@
 import React from "react";
 import AdoptSection from "../components/AdoptSection";
+import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import MakeTheChange from "../components/MakeTheChange";
 import Perks from "../components/Perks";
@@ -13,6 +14,7 @@ const Landing = () => {
       <MakeTheChange />
       <Quote />
       <AdoptSection />
+      <Footer />
     </div>
   );
 };

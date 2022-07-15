@@ -3,34 +3,34 @@ import { DollarSign, HelpCircle, Send } from "react-feather";
 
 const Perks = () => {
   return (
-    <div className="shadow-md flex flex-col justify-center lg:flex-row py-16 items-center mx-2">
-      <div className="lg:ml-24 space-x-2 md:space-x-0 justify-center md:justify-start text-bgprimary uppercase font-black tracking-wider text-3xl md:text-6xl flex md:flex-col md:space-y-8 w-11/12 md:w-6/12">
+    <div className="flex flex-col items-center justify-center py-24 mx-2 shadow-md lg:flex-row">
+      <div className="flex justify-center w-11/12 space-x-2 text-3xl font-black tracking-wider uppercase lg:ml-24 md:space-x-0 md:justify-start text-bgprimary md:text-6xl md:flex-col md:space-y-8 md:w-6/12">
         <span>No</span>
         <span className="text-primary">Strings</span>
         <span>attached</span>
       </div>
-      <div className="w-11/12 md:w-6/12 flex flex-col space-y-10 mt-10 lg:mt-0">
+      <div className="flex flex-col w-11/12 mt-10 space-y-10 md:w-6/12 lg:mt-0">
         <div className="flex items-center space-x-4">
-          <div className="text-white rounded-full bg-primary p-4">
+          <div className="p-4 text-white rounded-full bg-primary">
             <DollarSign />
           </div>
-          <p className="text-bgprimary text-lg tracking-wide">
+          <p className="text-lg tracking-wide text-bgprimary">
             Its free and always will be. No doubts.
           </p>
         </div>
         <div className="flex items-center space-x-4">
-          <div className="text-white rounded-full bg-primary p-4">
+          <div className="p-4 text-white rounded-full bg-primary">
             <Send />
           </div>
-          <p className="text-bgprimary text-lg tracking-wide">
+          <p className="text-lg tracking-wide text-bgprimary">
             Sign in and start finding your friend.
           </p>
         </div>
         <div className="flex items-center space-x-4">
-          <div className="text-white rounded-full bg-primary p-4">
+          <div className="p-4 text-white rounded-full bg-primary">
             <HelpCircle />
           </div>
-          <p className="text-bgprimary text-lg tracking-wide">
+          <p className="text-lg tracking-wide text-bgprimary">
             Confused get on a call and talk about it
           </p>
         </div>

@@ -31,6 +31,7 @@ const ProfileMenu = () => {
         className="w-10 border-[3px] transition-all duration-200 border-solid rounded-full cursor-pointer border-orange-400 hover:border-primary"
         alt={`${user.name} profile`}
         onClick={profileClickHandler}
+        referrerPolicy="no-referrer"
       />
       {showProfileMenu && (
         <div className="absolute right-1 -bottom-[130px] bg-white border-[1px] border-gray-300 border-solid rounded w-40 z-10">

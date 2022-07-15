@@ -75,6 +75,7 @@ const Navbar = () => {
           {user && (
             <img
               src={user.photoURL || DefaultProfileImg}
+              referrerPolicy="no-referrer"
               className="w-12 h-12 border-[3px] object-cover transition-all duration-200 border-solid rounded-full cursor-pointer border-white-40"
               alt={`${user.name} profile`}
             />
