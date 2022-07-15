@@ -59,6 +59,8 @@ const Navbar = () => {
           ></div>
         )}
       </nav>
+
+      {/* SideNav Mobile Screen */}
       <div
         className={`absolute top-0 right-0 z-30 md:hidden ease-linear duration-200 shadow-md h-screen text-white w-80 bg-primary ${
           !showSideNav && "translate-x-full"

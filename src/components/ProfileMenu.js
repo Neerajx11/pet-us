@@ -31,7 +31,7 @@ const ProfileMenu = () => {
         onClick={profileClickHandler}
       />
       {showProfileMenu && (
-        <div className="absolute right-1 -bottom-[130px] bg-white border-[1px] border-gray-300 border-solid rounded w-40">
+        <div className="absolute right-1 -bottom-[130px] bg-white border-[1px] border-gray-300 border-solid rounded w-40 z-10">
           <div className="absolute w-2 h-2 bg-white border-gray-300 border-solid border-l-[1px] border-t-[1px] rotate-45 -translate-y-1 right-3"></div>
           <NavLink
             to="add"

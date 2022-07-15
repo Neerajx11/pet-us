@@ -11,7 +11,7 @@ const Hero = () => {
       {/* Main section */}
       <div className="flex flex-col justify-between w-full mx-10 md:mx-24 lg:space-x-10 lg:flex-row xl:mx-32">
         <div className="py-12 mt-6 text-center md:mt-12 lg:text-left">
-          <p className="pb-12 text-5xl font-bold">
+          <p className="pb-12 text-5xl md:text-6xl font-bold">
             <span className="text-bgprimary">You can </span>{" "}
             <span className="text-primary">Help!</span>
           </p>
@@ -35,7 +35,7 @@ const Hero = () => {
           />
         </div>
       </div>
-      <div className="absolute flex flex-col space-y-8 right-4 lg:right-12 top-56 md:top-36">
+      <div className="absolute hidden sm:flex flex-col space-y-8 right-4 lg:right-12 top-56 md:top-36">
         <a href="https://www.instagram.com/animalaid_india">
           <Instagram strokeWidth="1" className="text-bgprimary" />
         </a>
