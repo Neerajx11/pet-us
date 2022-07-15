@@ -5,7 +5,7 @@ import { Facebook, GitHub, Instagram } from "react-feather";
 
 const Footer = () => {
   return (
-    <div className="text-white">
+    <div className="text-white shadow-md">
       <div className="flex flex-col items-start justify-start px-20 py-12 space-y-12 lg:space-y-0 lg:items-center lg:justify-around lg:flex-row bg-bgsecondary lg:px-0">
         <div>
           <Logo />

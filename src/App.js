@@ -13,7 +13,7 @@ import Landing from "./pages/Landing";
 
 const App = () => {
   return (
-    <div>
+    <div className="max-w-[1600px] mx-auto">
       <Router>
         <Navbar />
         <Routes>

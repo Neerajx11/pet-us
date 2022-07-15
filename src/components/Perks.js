@@ -3,7 +3,7 @@ import { DollarSign, HelpCircle, Send } from "react-feather";
 
 const Perks = () => {
   return (
-    <div className="flex flex-col items-center justify-center py-24 mx-2 shadow-md lg:flex-row">
+    <div className="flex flex-col items-center justify-center py-24 shadow-md lg:flex-row">
       <div className="flex justify-center w-11/12 space-x-2 text-3xl font-black tracking-wider uppercase lg:ml-24 md:space-x-0 md:justify-start text-bgprimary md:text-6xl md:flex-col md:space-y-8 md:w-6/12">
         <span>No</span>
         <span className="text-primary">Strings</span>
