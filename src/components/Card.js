@@ -40,27 +40,27 @@ const Card = ({ data }) => {
     >
       <img
         src={data.photoURL}
-        className="object-cover rounded-md h-64 shadow-sm"
+        className="object-cover rounded-md h-64 shadow-sm w-[288px]"
         alt={`${data.name} profile`}
       />
-      <p className="text-primary text-xl capitalize tracking-wider mt-6 mb-4 font-bold">
+      <p className="mt-6 mb-4 text-xl font-bold tracking-wider capitalize text-primary">
         {data.name}
       </p>
-      <div className="flex space-x-4 text-bgprimary justify-between">
-        <div className="flex space-x-1 items-center">
+      <div className="flex justify-between space-x-4 text-bgprimary">
+        <div className="flex items-center space-x-1">
           <Book className="w-[18px] h-[18px]" />
-          <span className="capitalize font-bold  tracking-wide">
+          <span className="font-bold tracking-wide capitalize">
             {data.breed}
           </span>
         </div>
-        <div className="flex space-x-1 items-center">
+        <div className="flex items-center space-x-1">
           <MapPin className="w-[18px] h-[18px]" />
-          <span className="capitalize font-bold text-bgprimary tracking-wide">
+          <span className="font-bold tracking-wide capitalize text-bgprimary">
             {data.city}
           </span>
         </div>
       </div>
-      <div className="absolute left-0 bottom-0 h-4 w-full bg bg-primary"></div>
+      <div className="absolute bottom-0 left-0 w-full h-4 bg bg-primary"></div>
     </div>
   );
 };
