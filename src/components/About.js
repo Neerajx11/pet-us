@@ -1,10 +1,9 @@
 import Footer from "./Footer";
-import Loader from "./Loader";
 
 const About = () => {
   return (
     <div>
-      <Loader />
+      <div className="h-[80vh]">Something need to add</div>
       <Footer />
     </div>
   );
