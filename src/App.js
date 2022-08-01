@@ -13,7 +13,7 @@ import Login from "./pages/Login";
 
 const App = () => {
   return (
-    <div className="max-w-[1600px] mx-auto">
+    <div className="max-w-[1700px] mx-auto">
       <Router>
         <Navbar />
         <Routes>
