@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import About from "./components/About";
 import AddDoggo from "./components/AddDoggo";
-import MyDoggo from "./components/MyDoggo";
+import MyDoggo from "./pages/MyDoggo";
 import Navbar from "./components/Navbar";
 import Private from "./components/Private";
 import Doggo from "./pages/Doggo";

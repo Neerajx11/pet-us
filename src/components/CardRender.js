@@ -4,7 +4,12 @@ import { getData } from "../helpers/firebaseManger";
 import Card from "./Card";
 import Loader from "./Loader";
 
-const CardRender = ({ str = "doggo", uid = "null", length = 0 }) => {
+const CardRender = ({
+  str = "doggo",
+  uid = "null",
+  length = 0,
+  msg = false,
+}) => {
   const [doggo, setDoggo] = useState([]);
 
   useEffect(() => {
@@ -30,7 +35,17 @@ const CardRender = ({ str = "doggo", uid = "null", length = 0 }) => {
           {dummy}
         </>
       ) : (
-        <Loader />
+        <>
+          {msg ? (
+            <div className="h-[60vh] grid place-items-center">
+              <h3 className="ml-6 text-4xl font-bold text-center text-bgprimary">
+                You have not added any dog yet :|
+              </h3>
+            </div>
+          ) : (
+            <Loader />
+          )}
+        </>
       )}
     </>
   );
