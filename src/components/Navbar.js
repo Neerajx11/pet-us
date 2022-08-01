@@ -88,7 +88,7 @@ const Navbar = () => {
         >
           <div className="flex flex-col space-y-12">
             <NavLink to="/explore">Explore</NavLink>
-            <NavLink to="/about">About Us</NavLink>
+            <NavLink to="/about">About</NavLink>
             <NavLink to="/add">Add Doggo</NavLink>
             <NavLink to="/mydoggo">Manage Doggo</NavLink>
           </div>
