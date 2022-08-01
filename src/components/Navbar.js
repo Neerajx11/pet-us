@@ -44,7 +44,7 @@ const Navbar = () => {
           {user ? (
             <ProfileMenu />
           ) : (
-            <Button text="Sign In" onClick={() => dispatch(signIn())} />
+            <Button text="Login" onClick={() => dispatch(signIn())} />
           )}
         </div>
         <div className="py-1 md:hidden">
@@ -98,7 +98,7 @@ const Navbar = () => {
             </div>
           ) : (
             <div className="cursor-pointer" onClick={() => dispatch(signIn())}>
-              Sign In
+              Login
             </div>
           )}
         </div>

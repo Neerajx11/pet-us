@@ -23,7 +23,7 @@ const Perks = () => {
             <Send />
           </div>
           <p className="text-lg tracking-wide text-bgprimary">
-            Sign in and start finding your friend.
+            Login and start finding your friend.
           </p>
         </div>
         <div className="flex items-center space-x-4">

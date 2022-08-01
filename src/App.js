@@ -4,12 +4,12 @@ import About from "./components/About";
 import AddDoggo from "./components/AddDoggo";
 import MyDoggo from "./components/MyDoggo";
 import Navbar from "./components/Navbar";
-import NotFound from "./components/NotFound";
 import Private from "./components/Private";
-import SignIn from "./components/SignIn";
 import Doggo from "./pages/Doggo";
 import Explore from "./pages/Explore";
+import FOF from "./pages/FOF";
 import Landing from "./pages/Landing";
+import Login from "./pages/Login";
 
 const App = () => {
   return (
@@ -18,13 +18,13 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/signin" element={<SignIn />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/explore" element={<Explore />} />
           <Route path="/mydoggo" element={<Private component={MyDoggo} />} />
           <Route path="/add" element={<Private component={AddDoggo} />} />
           <Route path="/doggo/:id" element={<Doggo />} />
           <Route path="/about" element={<About />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<FOF />} />
         </Routes>
       </Router>
     </div>
