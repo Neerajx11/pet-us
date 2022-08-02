@@ -5,7 +5,7 @@ const Quote = () => {
   return (
     <div className="relative pt-16 pb-6 text-center border-b-8 border-solid shadow-md border-primary">
       <Heading text="They say" />
-      <div className="mx-4 my-12 text-xl italic font-medium tracking-wide">
+      <div className="mx-4 my-12 text-xl font-medium tracking-wide">
         <p className="text-bgsecondary">
           <span className="text-primary">"</span>In a perfect world, all other
           than human animals would be free of human

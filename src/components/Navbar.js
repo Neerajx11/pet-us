@@ -3,7 +3,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { signIn, signOut } from "../features/authSlice";
 import Button from "./Button";
-import { Menu, X } from "react-feather";
+import {
+  Book,
+  Compass,
+  Layers,
+  LogIn,
+  LogOut,
+  Menu,
+  Plus,
+  X,
+} from "react-feather";
 
 import Logo from "./Logo";
 import ProfileMenu from "./ProfileMenu";
@@ -31,15 +40,15 @@ const Navbar = () => {
         <div className="items-center justify-between hidden space-x-10 font-semibold tracking-wide md:flex w-max text-bgprimary">
           <NavLink
             to="/explore"
-            className="px-6 py-2 transition-colors duration-200 hover:text-primary hover:bg-primarylight"
+            className="flex items-center px-6 py-2 transition-colors duration-200 hover:text-primary hover:bg-primarylight"
           >
-            Explore
+            <Compass className="w-5 h-5 mr-2" /> Explore
           </NavLink>
           <NavLink
             to="/about"
-            className="px-6 py-2 transition-colors duration-200 hover:text-primary hover:bg-primarylight"
+            className="flex items-center px-6 py-2 transition-colors duration-200 hover:text-primary hover:bg-primarylight"
           >
-            About
+            <Book className="w-5 h-5 mr-2" /> About
           </NavLink>
           {user ? (
             <ProfileMenu />
@@ -87,18 +96,32 @@ const Navbar = () => {
           className="flex flex-col justify-between font-semibold tracking-wide h-[83%] pl-4 pt-8"
         >
           <div className="flex flex-col space-y-12">
-            <NavLink to="/explore">Explore</NavLink>
-            <NavLink to="/about">About</NavLink>
-            <NavLink to="/add">Add Doggo</NavLink>
-            <NavLink to="/mydoggo">Manage Doggo</NavLink>
+            <NavLink to="/explore" className="flex items-center">
+              <Compass className="w-5 h-5 mr-2" /> Explore
+            </NavLink>
+            <NavLink to="/about" className="flex items-center">
+              <Book className="w-5 h-5 mr-2" /> About
+            </NavLink>
+            <NavLink to="/add" className="flex items-center">
+              <Plus className="w-5 h-5 mr-2" /> Add Doggo
+            </NavLink>
+            <NavLink to="/mydoggo" className="flex items-center">
+              <Layers className="w-5 h-5 mr-2" /> Manage Doggo
+            </NavLink>
           </div>
           {user ? (
-            <div className="cursor-pointer" onClick={() => dispatch(signOut())}>
-              Logout
+            <div
+              className="flex items-center cursor-pointer"
+              onClick={() => dispatch(signOut())}
+            >
+              <LogOut className="w-5 h-5 mr-2" /> Logout
             </div>
           ) : (
-            <div className="cursor-pointer" onClick={() => dispatch(signIn())}>
-              Login
+            <div
+              className="flex items-center cursor-pointer"
+              onClick={() => dispatch(signIn())}
+            >
+              <LogIn className="w-5 h-5 mr-2" /> Login
             </div>
           )}
         </div>

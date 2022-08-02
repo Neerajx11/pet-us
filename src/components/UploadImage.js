@@ -2,8 +2,6 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { useEffect, useState } from "react";
 import { storage } from "../firebase";
 
-import s from "./UploadImage.module.css";
-
 const sampleImageUrl =
   "https://img.freepik.com/free-vector/cute-dog-bites-bone-cartoon-vector-icon-illustration-animal-nature-icon-concept-isolated-premium-vector-flat-cartoon-style_138676-3743.jpg";
 
@@ -53,13 +51,20 @@ const UploadImage = ({ progress, setProgress, upHandler, className }) => {
   }, [file, upHandler, setProgress]);
 
   return (
-    <div className={`${className} ${s.main}`}>
-      <h2>Upload Image</h2>
-      <img src={file ? URL.createObjectURL(file) : sampleImageUrl} alt="dog" />
+    <div className={`${className}`}>
+      <p className="mb-12 text-xl font-bold text-bgprimary">
+        Hows your doggo look like?
+      </p>
+      <img
+        src={file ? URL.createObjectURL(file) : sampleImageUrl}
+        className="overflow-hidden rounded-sm w-60 h-60"
+        alt="dog"
+      />
       <input
         type="file"
         name="dog image"
         id="file"
+        className="mt-12 file:bg-primary file:text-white file:cursor-pointer file:font-semibold file:text-md file:border-none file:outline-none file:px-4 file:py-1 file:rounded-md"
         onChange={(e) => setFile(e.target.files[0])}
         placeholder="choose doggo image"
         disabled={progress !== 0 && progress < 100}

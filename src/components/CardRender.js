@@ -38,7 +38,7 @@ const CardRender = ({
         <>
           {msg ? (
             <div className="h-[60vh] grid place-items-center">
-              <h3 className="ml-6 text-4xl font-bold text-center text-bgprimary">
+              <h3 className="mx-6 text-4xl font-bold text-center text-bgprimary">
                 You have not added any dog yet :|
               </h3>
             </div>
