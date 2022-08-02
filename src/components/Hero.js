@@ -16,9 +16,9 @@ const Hero = () => {
             <span className="text-primary">Help!</span>
           </p>
           <p className="mx-auto mb-12 leading-8 tracking-wide w-96 ">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id vero
-            illum ratione molestias? Facilis consequatur asperiores commodi hic
-            necessitatibus.
+            You might be getting a pet dog for your own purposes, but for a
+            stray dog, you become their whole world by giving it a healthy space
+            to live in.
           </p>
           <div className="flex justify-center lg:justify-start">
             <NavLink to="/explore">
