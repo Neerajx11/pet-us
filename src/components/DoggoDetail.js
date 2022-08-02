@@ -73,21 +73,27 @@ const DoggoDetail = () => {
             </p>
             {/* icons */}
             <div className="mt-8 space-y-6 text-lg font-semibold text-bgprimary">
-              <div className="flex items-center">
+              <div className="flex items-center cursor-pointer" title="Breed">
                 <Gitlab className="w-5 h-5 mr-8" />
                 <span>{data.breed}</span>
               </div>
-              <div className="flex items-center">
+              <div
+                className="flex items-center cursor-pointer"
+                title="Location"
+              >
                 <MapPin className="w-5 h-5 mr-8" />
                 <span>{data.city}</span>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center cursor-pointer" title="Age">
                 <Clock className="w-5 h-5 mr-8" />
                 <span>
                   {data.age.year} year {data.age.month} months
                 </span>
               </div>
-              <div className="flex items-center">
+              <div
+                className="flex items-center cursor-pointer"
+                title="Is dog vaccinated"
+              >
                 <Activity className="w-5 h-5 mr-8" />
                 <span>{data.isVaccinated ? "Yes" : "No"}</span>
               </div>
