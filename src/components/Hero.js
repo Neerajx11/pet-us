@@ -15,7 +15,7 @@ const Hero = () => {
             <span className="text-bgprimary">You can </span>{" "}
             <span className="text-primary">Help!</span>
           </p>
-          <p className="mx-auto mb-12 leading-8 tracking-wide w-96 ">
+          <p className="mx-auto mb-12 font-medium leading-8 tracking-wide w-96">
             You might be getting a pet dog for your own purposes, but for a
             stray dog, you become their whole world by giving it a healthy space
             to live in.
