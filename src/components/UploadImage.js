@@ -57,7 +57,7 @@ const UploadImage = ({ progress, setProgress, upHandler, className }) => {
       </p>
       <img
         src={file ? URL.createObjectURL(file) : sampleImageUrl}
-        className="overflow-hidden rounded-sm w-60 h-60"
+        className="object-cover overflow-hidden rounded-sm w-60 h-60"
         alt="dog"
       />
       <input
