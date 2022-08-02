@@ -7,7 +7,8 @@ import { addDoggoDetail } from "../helpers/firebaseManger";
 import AddForm from "./AddForm";
 import UploadImage from "./UploadImage";
 
-import s from "./AddDoggo.module.css";
+import Template from "./Template";
+import Footer from "./Footer";
 
 const AddDoggo = () => {
   const { user } = useSelector((state) => state.auth);
@@ -38,17 +39,25 @@ const AddDoggo = () => {
     }
   };
   return (
-    <div className={s.main}>
-      <p className="head">Put for adoption</p>
-      <div className={s.ctr}>
-        <UploadImage
-          upHandler={upHandler}
-          progress={prog}
-          setProgress={setProg}
-          className={s.left}
-        />
-        <AddForm className={s.right} subHandler={subHandler} progress={prog} />
-      </div>
+    <div>
+      <Template head="Put for" sub="adoption">
+        <div className="my-8">
+          <div className="flex flex-col items-center justify-center md:flex-row md:items-start">
+            <UploadImage
+              upHandler={upHandler}
+              progress={prog}
+              setProgress={setProg}
+              className="w-10/12 m-8 md:4/12 lg:w-4/12"
+            />
+            <AddForm
+              className="w-10/12 pt-2 m-8 md:8/12 lg:w-8/12"
+              subHandler={subHandler}
+              progress={prog}
+            />
+          </div>
+        </div>
+      </Template>
+      <Footer />
     </div>
   );
 };

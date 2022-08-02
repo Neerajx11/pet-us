@@ -1,15 +1,9 @@
 import { Loader as Load } from "react-feather";
 
-const style = {
-  width: "100%",
-  margin: "20px auto",
-  display: "flex",
-  justifyContent: "center",
-};
 const Loader = () => {
   return (
-    <div style={style}>
-      <Load />
+    <div className="my-12 h-[50vh] lg:h-[60vh] grid place-items-center">
+      <Load className="w-12 h-12 animate-spin text-primary" />
     </div>
   );
 };

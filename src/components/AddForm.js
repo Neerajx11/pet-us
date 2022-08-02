@@ -1,7 +1,6 @@
-import s from "./AddForm.module.css";
-
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
+import Button from "./Button";
 
 const initialValues = {
   name: "",
@@ -48,14 +47,15 @@ const validationSchema = Yup.object({
 });
 
 const Error = (msg) => (
-  <div style={{ color: "red" }} className={s.err}>
-    {msg}
-  </div>
+  <div className="text-xs font-semibold tracking-wide text-red-900">{msg}</div>
 );
+
+const inpCls =
+  "w-full px-2 py-2 my-2 text-sm font-semibold tracking-wide border border-solid rounded-sm placeholder:tracking-wide border-bgprimary placeholder:text-sm text-bgprimary";
 
 const AddForm = ({ subHandler, progress, className }) => {
   return (
-    <div className={`${s.main} ${className}`}>
+    <div className={`${className}`}>
       <Formik
         initialValues={initialValues}
         onSubmit={subHandler}
@@ -63,10 +63,10 @@ const AddForm = ({ subHandler, progress, className }) => {
       >
         <Form>
           {/* name */}
-          <div className={s.inpCtr}>
-            <label htmlFor="name">Name* : </label>
+          <div className="mb-4 font-semibold text-primary">
+            <label htmlFor="name">Name* :</label>
             <Field
-              className={s.txtInp}
+              className={inpCls}
               name="name"
               type="text"
               placeholder="Enter dog's name"
@@ -75,10 +75,10 @@ const AddForm = ({ subHandler, progress, className }) => {
           </div>
 
           {/* city */}
-          <div className={s.inpCtr}>
-            <label htmlFor="city">City* : </label>
+          <div className="mb-4 font-semibold text-primary">
+            <label htmlFor="city">City* :</label>
             <Field
-              className={s.txtInp}
+              className={inpCls}
               name="city"
               type="text"
               placeholder="Dog's location"
@@ -87,10 +87,10 @@ const AddForm = ({ subHandler, progress, className }) => {
           </div>
 
           {/* breed */}
-          <div className={s.inpCtr}>
-            <label htmlFor="breed">Breed* : </label>
+          <div className="mb-4 font-semibold text-primary">
+            <label htmlFor="breed">Breed* :</label>
             <Field
-              className={s.txtInp}
+              className={inpCls}
               name="breed"
               type="text"
               placeholder="Breed of the dog"
@@ -99,10 +99,10 @@ const AddForm = ({ subHandler, progress, className }) => {
           </div>
 
           {/* description */}
-          <div className={s.inpCtr}>
-            <label htmlFor="description">Description : </label>
+          <div className="mb-4 font-semibold text-primary">
+            <label htmlFor="description">Description :</label>
             <Field
-              className={s.txtInp}
+              className={inpCls}
               name="description"
               type="text"
               placeholder="Something about the dog"
@@ -112,10 +112,10 @@ const AddForm = ({ subHandler, progress, className }) => {
           </div>
 
           {/* vaccination status */}
-          <div className={s.inpCtr}>
-            <label htmlFor="isVaccinated">Is your dog vaccinated* : </label>
+          <div className="mb-4 font-semibold text-primary">
+            <label htmlFor="isVaccinated">Is your dog vaccinated* :</label>
             <Field
-              className={s.txtInp}
+              className={inpCls}
               name="isVaccinated"
               type="text"
               as="select"
@@ -128,20 +128,20 @@ const AddForm = ({ subHandler, progress, className }) => {
 
           {/* age */}
           <div>
-            <div className={s.inpCtr}>
-              <label htmlFor="age.year">Year* : </label>
+            <div className="mb-4 font-semibold text-primary">
+              <label htmlFor="age.year">Year* :</label>
               <Field
-                className={s.txtInp}
+                className={inpCls}
                 name="age.year"
                 type="number"
                 placeholder="Age of your dog (years)"
               />
               <ErrorMessage name="age.month" render={Error} />
             </div>
-            <div className={s.inpCtr}>
-              <label htmlFor="age.month">Months* : </label>
+            <div className="mb-4 font-semibold text-primary">
+              <label htmlFor="age.month">Months* :</label>
               <Field
-                className={s.txtInp}
+                className={inpCls}
                 name="age.month"
                 type="number"
                 placeholder="Age of your dog (months)"
@@ -151,42 +151,40 @@ const AddForm = ({ subHandler, progress, className }) => {
           </div>
 
           {/* contact details */}
-          <div className={s.inpCtr}>
-            <label htmlFor="contactDetail.email">Email* : </label>
+          <div className="mb-4 font-semibold text-primary">
+            <label htmlFor="contactDetail.email">Email* :</label>
             <Field
-              className={s.txtInp}
+              className={inpCls}
               name="contactDetail.email"
               type="text"
               placeholder="Email"
             />
             <ErrorMessage name="contactDetail.email" render={Error} />
           </div>
-          <div className={s.inpCtr}>
-            <label htmlFor="contactDetail.phone">Phone : </label>
+          <div className="mb-4 font-semibold text-primary">
+            <label htmlFor="contactDetail.phone">Phone :</label>
             <Field
-              className={s.txtInp}
+              className={inpCls}
               name="contactDetail.phone"
               type="number"
               placeholder="Phone number"
             />
             <ErrorMessage name="contactDetail.phone" render={Error} />
           </div>
-          <div className={s.inpCtr}>
-            <label htmlFor="contactDetail.instagram">
-              Instagram Username:{" "}
-            </label>
+          <div className="mb-4 font-semibold text-primary">
+            <label htmlFor="contactDetail.instagram">Instagram Username:</label>
             <Field
-              className={s.txtInp}
+              className={inpCls}
               name="contactDetail.instagram"
               type="text"
               placeholder="Instagram Username"
             />
             <ErrorMessage name="contactDetail.instagram" render={Error} />
           </div>
-          <div className={s.inpCtr}>
-            <label>Facebook Link: </label>
+          <div className="mb-4 font-semibold text-primary">
+            <label>Facebook Link:</label>
             <Field
-              className={s.txtInp}
+              className={inpCls}
               name="contactDetail.facebook"
               type="text"
               placeholder="Facebook Link"
@@ -196,13 +194,14 @@ const AddForm = ({ subHandler, progress, className }) => {
 
           {/* end */}
 
-          <button
-            className={`btn btn-solid ${s.fBtn}`}
+          <Button
+            className="mt-12 w-max"
+            text="Submit"
             disabled={progress !== 0 && progress < 100}
             type="submit"
           >
             Submit
-          </button>
+          </Button>
         </Form>
       </Formik>
     </div>
