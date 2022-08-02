@@ -47,7 +47,7 @@ const AddDoggo = () => {
               upHandler={upHandler}
               progress={prog}
               setProgress={setProg}
-              className="w-10/12 m-8 md:4/12 lg:w-4/12"
+              className="w-10/12 m-8 md:4/12 lg:w-4/12 md:pl-24"
             />
             <AddForm
               className="w-10/12 pt-2 m-8 md:8/12 lg:w-8/12"

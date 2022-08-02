@@ -9,7 +9,7 @@ const Perks = () => {
         <span className="text-primary">Strings</span>
         <span>attached</span>
       </div>
-      <div className="flex flex-col w-11/12 mt-10 space-y-10 md:w-6/12 lg:mt-0">
+      <div className="flex flex-col w-11/12 mt-10 space-y-10 font-medium md:w-6/12 lg:mt-0">
         <div className="flex items-center space-x-4">
           <div className="p-4 text-white rounded-full bg-primary">
             <DollarSign />
