@@ -36,7 +36,7 @@ const Card = ({ data }) => {
   return (
     <div
       onClick={clickHandler}
-      className="max-w-[320px] my-8 mx-16 min-w-[320px] shadow-lg rounded-md relative overflow-hidden h-[410px] p-4 cursor-pointer"
+      className="max-w-[320px] hover:scale-105 transition-transform duration-200 ease-linear my-8 mx-16 min-w-[320px] shadow-lg rounded-md relative overflow-hidden h-[410px] p-4 cursor-pointer"
     >
       <img
         src={data.photoURL}

@@ -39,13 +39,13 @@ const Hero = () => {
       </div>
       <div className="absolute flex-col hidden space-y-8 sm:flex right-4 lg:right-12 top-56 md:top-36">
         <a href="https://www.instagram.com/animalaid_india">
-          <Instagram strokeWidth="1" className="text-bgprimary" />
+          <Instagram className="w-5 h-5 text-bgprimary" />
         </a>
         <a href="https://www.instagram.com/animalaid_india">
-          <GitHub strokeWidth="1" className="text-bgprimary" />
+          <GitHub className="w-5 h-5 text-bgprimary" />
         </a>
         <a href="https://www.facebook.com/AnimalAidUnlimited/">
-          <Facebook strokeWidth="1" className="text-bgprimary" />
+          <Facebook className="w-5 h-5 text-bgprimary" />
         </a>
       </div>
     </div>
