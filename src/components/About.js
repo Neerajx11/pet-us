@@ -5,7 +5,7 @@ import Footer from "./Footer";
 const About = () => {
   return (
     <div>
-      <div className="px-[50px] pt-12 pb-24">
+      <div className="px-[50px] pt-12 pb-24 min-h-[80vh]">
         <div className="text-center md:text-left">
           <p className="text-primary text-[80px] font-bold">35</p>
           <p className="text-primary text-[80px] font-bold">Million</p>
